@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Services - Student Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                        <rect x="5" y="5" width="40" height="40" rx="8" fill="#7b8fb8"/>
+                        <path d="M25 12c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6z" fill="white"/>
+                        <path d="M25 28c-6 0-8 2.5-8 4.5v6c0 1.5 1.5 2.5 3 2.5h20c1.5 0 3-1 3-2.5v-6c0-2-2-4.5-8-4.5z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h3>QCU Student Services</h3>
+                    <p>Student Portal</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="counseling.html" class="nav-item" onclick="navigateTo('counseling.html')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="10" cy="7" r="3"/>
+                        <path d="M16 13c0-2.5-2.5-4-6-4s-6 1.5-6 4v4c0 1 .5 2 1.5 2h9c1 0 1.5-1 1.5-2v-4z"/>
+                    </svg>
+                    <span>Counseling</span>
+                </a>
+                <a href="event.html" class="nav-item active" onclick="navigateTo('event.html')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="4" width="14" height="14" rx="1"/>
+                        <path d="M7 2v4"/>
+                        <path d="M13 2v4"/>
+                        <path d="M3 8h14"/>
+                    </svg>
+                    <span>Event Services</span>
+                </a>
+                <a href="clubs.html" class="nav-item" onclick="navigateTo('clubs.html')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="7" cy="6" r="2.5"/>
+                        <path d="M2 10c0-1.5 1.5-2.5 3.5-2.5s3.5 1 3.5 2.5v4c0 1 1 1.5 2 1.5h1c1 0 2-.5 2-1.5v-4c0-1.5 1.5-2.5 3.5-2.5s3.5 1 3.5 2.5v4c0 1 0 2-1 2h-14c-1 0-1-1-1-2v-4z"/>
+                    </svg>
+                    <span>Club Organization</span>
+                </a>
+                <a href="ojt.html" class="nav-item" onclick="navigateTo('ojt.html')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="4" y="2" width="12" height="16" rx="1"/>
+                        <path d="M7 5h6"/>
+                        <path d="M6 9h8"/>
+                        <path d="M6 12h8"/>
+                        <path d="M6 15h8"/>
+                    </svg>
+                    <span>OJT Listings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="nav-item" onclick="navigateTo('index.html')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 10l7-7 7 7v7a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-7z"/>
+                        <path d="M9 18v-4h2v4"/>
+                    </svg>
+                    <span>Homepage</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-wrapper">
+            <!-- Featured Event Banner -->
+            <section class="featured-event-banner">
+                <div class="banner-content-event">
+                    <h1 class="featured-title">Tech Talk: IT Summit</h1>
+                    <p class="featured-details">Wednesday · September 16, 2025 · QCU Auditorium</p>
+                </div>
+                <button class="view-details-btn">View Details</button>
+            </section>
+
+            <!-- Events Content Grid -->
+            <div class="events-content-wrapper">
+                <!-- Left Column: Calendar and Legend -->
+                <div class="events-left-column">
+                    <!-- Calendar Section -->
+                    <section class="calendar-section">
+                        <div class="calendar-header">
+                            <h2 class="calendar-title">September 2025</h2>
+                            <div class="calendar-nav">
+                                <button class="calendar-btn" onclick="previousMonth()">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 5l-7 7 7 7"/>
+                                    </svg>
+                                </button>
+                                <button class="calendar-btn" onclick="nextMonth()">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M8 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="calendar">
+                            <div class="calendar-weekdays">
+                                <div class="weekday">MON</div>
+                                <div class="weekday">TUE</div>
+                                <div class="weekday">WED</div>
+                                <div class="weekday">THU</div>
+                                <div class="weekday">FRI</div>
+                                <div class="weekday">SAT</div>
+                                <div class="weekday">SUN</div>
+                            </div>
+
+                            <div class="calendar-days">
+                                <div class="calendar-day empty"></div>
+                                <div class="calendar-day">1</div>
+                                <div class="calendar-day">2</div>
+                                <div class="calendar-day">3</div>
+                                <div class="calendar-day active">4</div>
+                                <div class="calendar-day">5</div>
+                                <div class="calendar-day">6</div>
+                                <div class="calendar-day">7</div>
+                                <div class="calendar-day">8</div>
+                                <div class="calendar-day">9</div>
+                                <div class="calendar-day">10</div>
+                                <div class="calendar-day">11</div>
+                                <div class="calendar-day">12</div>
+                                <div class="calendar-day">13</div>
+                                <div class="calendar-day">14</div>
+                                <div class="calendar-day">15</div>
+                                <div class="calendar-day has-event" role="button" tabindex="0" onclick="openEventDetail(1)" style="cursor:pointer;">16</div>
+                                <div class="calendar-day">17</div>
+                                <div class="calendar-day">18</div>
+                                <div class="calendar-day">19</div>
+                                <div class="calendar-day">20</div>
+                                <div class="calendar-day">21</div>
+                                <div class="calendar-day">22</div>
+                                <div class="calendar-day">23</div>
+                                <div class="calendar-day">24</div>
+                                <div class="calendar-day">25</div>
+                                <div class="calendar-day">26</div>
+                                <div class="calendar-day">27</div>
+                                <div class="calendar-day">28</div>
+                                <div class="calendar-day">29</div>
+                                <div class="calendar-day">30</div>
+                                <div class="calendar-day has-event" role="button" tabindex="0" onclick="openEventDetail(2)" style="cursor:pointer;">30</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Event Legend -->
+                    <section class="event-legend-section">
+                        <h3 class="legend-title">Legend of Campus Events</h3>
+                        <div class="legend-filter">
+                            <span class="filter-badge academic active">Academic, R...</span>
+                            <button class="filter-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="9" cy="9" r="8"/>
+                                    <path d="M6 9h6"/>
+                                    <path d="M9 6v6"/>
+                                </svg>
+                            </button>
+                            <button class="filter-btn">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M2 4h12M2 8h12M2 12h12"/>
+                                </svg>
+                                Filter
+                            </button>
+                        </div>
+
+                        <div class="legend-items">
+                            <div class="legend-item">
+                                <span class="legend-color academic"></span>
+                                <span class="legend-label">Academic</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color institutional"></span>
+                                <span class="legend-label">Institutional</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color community"></span>
+                                <span class="legend-label">Community</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color recreation"></span>
+                                <span class="legend-label">Recreation</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column: Latest Events and Upcoming -->
+                <aside class="events-right-column">
+                    <!-- Latest Section -->
+                    <div class="latest-section">
+                        <div class="latest-header">
+                            <h3 class="latest-title">Latest</h3>
+                            <a href="#" class="mark-read-link" onclick="markAllEventsAsRead(event)">Mark All As Read</a>
+                        </div>
+
+                        <div class="latest-items" id="latestItems">
+                            <div class="latest-item" data-latest-id="1">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M10 2l2.4 4.8h5.2l-4.2 3.2 1.6 4.8-4-3.2-4 3.2 1.6-4.8-4.2-3.2h5.2z"/>
+                                </svg>
+                                <span>Tech Talk: IT Summit added to calendar</span>
+                            </div>
+                            <div class="latest-item" data-latest-id="2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M10 2l2.4 4.8h5.2l-4.2 3.2 1.6 4.8-4-3.2-4 3.2 1.6-4.8-4.2-3.2h5.2z"/>
+                                </svg>
+                                <span>Your enrollment has been confirmed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-bar-container">
+                        <input type="text" class="search-input" id="eventSearchInput" placeholder="Search for an event..." onkeyup="searchEvents(this.value)">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#999" stroke-width="1.5">
+                            <circle cx="8" cy="8" r="6"/>
+                            <path d="M12 12l4 4"/>
+                        </svg>
+                    </div>
+
+                    <!-- Upcoming Events Tabs -->
+                    <div class="events-tabs">
+                        <button class="tab-btn active" onclick="switchTab('upcoming')">Upcoming Events</button>
+                        <button class="tab-btn" onclick="switchTab('saved')">Saved Events</button>
+                    </div>
+
+                    <!-- Events List -->
+                    <div class="events-list-container">
+                        <div id="upcoming" class="events-list-tab active">
+                            <!-- Event Item 1 -->
+                            <div class="event-list-item academic" role="button" tabindex="0" onclick="openEventDetail(1)" style="cursor:pointer;">
+                                <div class="event-color-indicator academic"></div>
+                                <div class="event-item-content">
+                                    <h4 class="event-item-title">Tech Talk: IT Summit</h4>
+                                    <p class="event-item-date">Wednesday - Sep 16, 2025</p>
+                                    <p class="event-item-time">2:00 PM · QCU Auditorium</p>
+                                </div>
+                                <button class="save-event-btn" onclick="event.stopPropagation();">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M4 2v16l8-5 8 5V2H4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Event Item 2 -->
+                            <div class="event-list-item institutional" role="button" tabindex="0" onclick="openEventDetail(2)" style="cursor:pointer;">
+                                <div class="event-color-indicator institutional"></div>
+                                <div class="event-item-content">
+                                    <h4 class="event-item-title">Schedule Adjustment</h4>
+                                    <p class="event-item-date">Wednesday - Sep 23, 2025</p>
+                                    <p class="event-item-time">1:00 PM · QCU Gymnasium</p>
+                                </div>
+                                <button class="save-event-btn" onclick="event.stopPropagation();">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M4 2v16l8-5 8 5V2H4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Event Item 3 -->
+                            <div class="event-list-item community" role="button" tabindex="0" onclick="openEventDetail(3)" style="cursor:pointer;">
+                                <div class="event-color-indicator community"></div>
+                                <div class="event-item-content">
+                                    <h4 class="event-item-title">QCU Bayanihan Week</h4>
+                                    <p class="event-item-date">Thursday - Sep 10, 2025</p>
+                                    <p class="event-item-time">12:00 PM · QCU OG</p>
+                                </div>
+                                <button class="save-event-btn" onclick="event.stopPropagation();">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M4 2v16l8-5 8 5V2H4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="saved" class="events-list-tab">
+                            <p style="text-align: center; color: #999; padding: 30px 20px;">No saved events yet.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Detail Modal -->
+    <div id="eventDetailModal" class="modal" aria-hidden="true">
+        <div class="modal-overlay" onclick="closeEventDetailModal()"></div>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="eventDetailTitle" style="max-width:800px;max-height:90vh;overflow-y:auto;">
+            <button class="modal-close" aria-label="Close" onclick="closeEventDetailModal()">×</button>
+            <div class="modal-body">
+                <div style="margin-bottom:20px;">
+                    <a href="#" onclick="closeEventDetailModal();return false;" style="color:#2c3e7f;text-decoration:none;font-size:14px;">← Back to Calendar</a>
+                </div>
+                
+                <div id="eventDetailContent">
+                    <!-- Content will be injected here by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Confirmation Modal -->
+    <div id="registrationModal" class="modal" aria-hidden="true">
+        <div class="modal-overlay" onclick="closeRegistrationModal()"></div>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="registrationTitle" style="max-width:500px;">
+            <button class="modal-close" aria-label="Close" onclick="closeRegistrationModal()">×</button>
+            <div class="modal-body">
+                <h2 id="registrationTitle">Confirm Registration?</h2>
+                <p class="muted" id="registrationEventName">Are you sure you want to register for this event? Once confirmed, your registration cannot be cancelled.</p>
+                
+                <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+                    <button type="button" class="learn-more-btn" style="background:#fff;color:#333;border:1px solid #e8e8e8;padding:10px 18px;border-radius:6px;" onclick="closeRegistrationModal()">Cancel</button>
+                    <button type="button" class="learn-more-btn" style="background:#2c3e7f;color:#fff;padding:10px 18px;border-radius:6px;border:0;" onclick="confirmRegistration()">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

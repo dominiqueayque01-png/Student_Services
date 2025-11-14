@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Services - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <button class="back-btn" onclick="handleBackClick()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+            </button>
+            <h1 class="header-title">Student Services</h1>
+            <button class="profile-btn" onclick="handleProfileClick()">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="white">
+                    <circle cx="20" cy="20" r="20"/>
+                    <circle cx="20" cy="12" r="5" fill="#4a5f9f"/>
+                    <path d="M20 18c-6.627 0-8 3-8 4v6c0 1 1 2 2 2h12c1 0 2-1 2-2v-6c0-1-1.373-4-8-4z" fill="#4a5f9f"/>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Welcome Card -->
+            <div class="welcome-card">
+                <div class="welcome-text">
+                    <h2 class="welcome-title">Welcome back!</h2>
+                    <p class="welcome-subtitle">How can we help you today?</p>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Active Events</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">New Messages</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- Counseling Card -->
+                <div class="service-card" onclick="handleServiceClick('counseling')">
+                    <div class="service-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="#2c3e7f" stroke-width="2">
+                            <circle cx="40" cy="25" r="12"/>
+                            <path d="M55 40c0-8-7.163-10-15-10s-15 2-15 10v15c0 3 2 5 5 5h20c3 0 5-2 5-5v-15z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Counseling</h3>
+                </div>
+
+                <!-- Event Services Card -->
+                <div class="service-card" onclick="handleServiceClick('events')">
+                    <div class="service-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="#2c3e7f" stroke-width="2">
+                            <rect x="15" y="20" width="50" height="50" rx="3"/>
+                            <path d="M20 30h40"/>
+                            <circle cx="30" cy="45" r="2" fill="#2c3e7f"/>
+                            <circle cx="40" cy="45" r="2" fill="#2c3e7f"/>
+                            <circle cx="50" cy="45" r="2" fill="#2c3e7f"/>
+                            <circle cx="30" cy="55" r="2" fill="#2c3e7f"/>
+                            <circle cx="40" cy="55" r="2" fill="#2c3e7f"/>
+                            <circle cx="50" cy="55" r="2" fill="#2c3e7f"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Event Services</h3>
+                </div>
+
+                <!-- Club Organization Card -->
+                <div class="service-card" onclick="handleServiceClick('clubs')">
+                    <div class="service-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="#2c3e7f" stroke-width="2">
+                            <circle cx="30" cy="25" r="8"/>
+                            <path d="M20 35c-3 0-5 2-5 5v12c0 2 2 4 4 4h12c2 0 4-2 4-4v-12c0-3-2-5-5-5z"/>
+                            <circle cx="50" cy="30" r="10"/>
+                            <path d="M38 42c-4 0-7 3-7 7v10c0 2 2 4 4 4h20c2 0 4-2 4-4v-10c0-4-3-7-7-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Club Organization</h3>
+                </div>
+
+                <!-- OJT Listings Card -->
+                <div class="service-card" onclick="handleServiceClick('ojt')">
+                    <div class="service-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="#2c3e7f" stroke-width="2">
+                            <rect x="20" y="15" width="40" height="50" rx="2"/>
+                            <path d="M35 30h10"/>
+                            <path d="M28 40h24"/>
+                            <path d="M28 50h24"/>
+                            <path d="M28 60h24"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">OJT Listings</h3>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

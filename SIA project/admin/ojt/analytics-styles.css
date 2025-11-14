@@ -1,0 +1,212 @@
+/* ============================================
+   Analytics Page Styles
+   ============================================ */
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ============================================
+   Section Title
+   ============================================ */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 30px 0 20px 0;
+}
+
+/* ============================================
+   Analytics Grid
+   ============================================ */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.analytics-card {
+    background-color: white;
+    border: 2px solid #e8f0ff;
+    border-radius: 8px;
+    padding: 24px;
+    transition: all 0.3s;
+}
+
+.analytics-card:hover {
+    border-color: #2d5aa8;
+    box-shadow: 0 4px 12px rgba(45, 90, 168, 0.1);
+}
+
+.analytics-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2d5aa8;
+    margin: 0 0 20px 0;
+}
+
+/* ============================================
+   Chart Container
+   ============================================ */
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.chart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chart-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    min-width: 80px;
+}
+
+.chart-bar-wrapper {
+    flex: 1;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    height: 28px;
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    position: relative;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.chart-bar.rate-1 {
+    background: linear-gradient(90deg, #1e88e5 0%, #1565c0 100%);
+}
+
+.chart-bar.rate-2 {
+    background: linear-gradient(90deg, #4caf50 0%, #388e3c 100%);
+}
+
+.chart-bar.rate-3 {
+    background: linear-gradient(90deg, #ff9800 0%, #f57c00 100%);
+}
+
+.chart-bar.rate-4 {
+    background: linear-gradient(90deg, #bdbdbd 0%, #9e9e9e 100%);
+}
+
+.chart-bar.location-1 {
+    background: linear-gradient(90deg, #1e88e5 0%, #1565c0 100%);
+}
+
+.chart-bar.location-2 {
+    background: linear-gradient(90deg, #4caf50 0%, #388e3c 100%);
+}
+
+.chart-bar.location-3 {
+    background: linear-gradient(90deg, #ff9800 0%, #f57c00 100%);
+}
+
+.chart-bar.location-4 {
+    background: linear-gradient(90deg, #bdbdbd 0%, #9e9e9e 100%);
+}
+
+.chart-value {
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    min-width: 24px;
+    text-align: center;
+}
+
+/* ============================================
+   Empty State
+   ============================================ */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+}
+
+.empty-state p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 1024px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-card.full-width {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 22px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .analytics-grid {
+        gap: 15px;
+    }
+
+    .analytics-card {
+        padding: 16px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+    .chart-item {
+        gap: 8px;
+    }
+
+    .chart-label {
+        font-size: 12px;
+        min-width: 70px;
+    }
+
+    .chart-bar-wrapper {
+        height: 24px;
+    }
+
+    .chart-value {
+        font-size: 11px;
+    }
+}

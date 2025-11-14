@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counseling Unit - Student Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                        <rect x="5" y="5" width="40" height="40" rx="8" fill="#7b8fb8"/>
+                        <path d="M25 12c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6z" fill="white"/>
+                        <path d="M25 28c-6 0-8 2.5-8 4.5v6c0 1.5 1.5 2.5 3 2.5h20c1.5 0 3-1 3-2.5v-6c0-2-2-4.5-8-4.5z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h3>QCU Student Services</h3>
+                    <p>Student Portal</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="counseling.html" class="nav-item active" onclick="navigateTo('counseling.html')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="10" cy="7" r="3"/>
+                        <path d="M16 13c0-2.5-2.5-4-6-4s-6 1.5-6 4v4c0 1 .5 2 1.5 2h9c1 0 1.5-1 1.5-2v-4z"/>
+                    </svg>
+                    <span>Counseling</span>
+                </a>
+                <a href="event.html" class="nav-item" onclick="navigateTo('events.html')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="4" width="14" height="14" rx="1"/>
+                        <path d="M7 2v4"/>
+                        <path d="M13 2v4"/>
+                        <path d="M3 8h14"/>
+                    </svg>
+                    <span>Event Services</span>
+                </a>
+                <a href="clubs.html" class="nav-item" onclick="navigateTo('clubs.html')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="7" cy="6" r="2.5"/>
+                        <path d="M2 10c0-1.5 1.5-2.5 3.5-2.5s3.5 1 3.5 2.5v4c0 1 1 1.5 2 1.5h1c1 0 2-.5 2-1.5v-4c0-1.5 1.5-2.5 3.5-2.5s3.5 1 3.5 2.5v4c0 1 0 2-1 2h-14c-1 0-1-1-1-2v-4z"/>
+                    </svg>
+                    <span>Club Organization</span>
+                </a>
+                <a href="ojt.html" class="nav-item" onclick="navigateTo('ojt.html')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="4" y="2" width="12" height="16" rx="1"/>
+                        <path d="M7 5h6"/>
+                        <path d="M6 9h8"/>
+                        <path d="M6 12h8"/>
+                        <path d="M6 15h8"/>
+                    </svg>
+                    <span>OJT Listings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="nav-item" onclick="navigateTo('index.html')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 10l7-7 7 7v7a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-7z"/>
+                        <path d="M9 18v-4h2v4"/>
+                    </svg>
+                    <span>Homepage</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-wrapper">
+            <!-- Header Banner -->
+            <section class="header-banner">
+                <div class="banner-content">
+                    <h1 class="banner-title">Counseling Unit</h1>
+                    <p class="banner-description">Confidential counseling services to support your wellbeing. Free for all QCU students. Get started starting today.</p>
+                    <div class="banner-info">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2c3e7f" stroke-width="1.5">
+                            <circle cx="10" cy="10" r="9"/>
+                            <path d="M10 6v4"/>
+                            <circle cx="10" cy="15" r="0.5" fill="#2c3e7f"/>
+                        </svg>
+                        <span class="office-hours-label">Office Hours</span>
+                        <span class="office-hours-time">Monday - Friday | 8:00 AM - 5:00 PM</span>
+                    </div>
+                </div>
+                <button class="learn-more-btn" onclick="openLearnMoreModal()">Learn More</button>
+            </section>
+
+            <!-- Learn More Modal -->
+            <div id="learnMoreModal" class="modal" aria-hidden="true">
+                <div class="modal-overlay" onclick="closeLearnMoreModal()"></div>
+                <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="learnMoreTitle">
+                    <button class="modal-close" aria-label="Close" onclick="closeLearnMoreModal()">×</button>
+                    <div class="modal-body">
+                        <h2 id="learnMoreTitle">Counseling Unit · Student Services</h2>
+                        <p class="muted">Your mental health and wellbeing are our priority.</p>
+
+                        <h3>About Our Services</h3>
+                        <p>The QCU Counseling Unit provides free, confidential mental health services to all students. Our professional counselors are here to support you through academic stress, personal challenges, relationship issues, anxiety, depression, and other concerns affecting your wellbeing.</p>
+
+                        <h3>Services We Provide</h3>
+                        <ul>
+                            <li>Individual counseling sessions</li>
+                            <li>Group therapy and support groups</li>
+                            <li>Crisis intervention and emergency support</li>
+                            <li>Academic stress and time management counseling</li>
+                            <li>Anxiety and depression management</li>
+                            <li>Relationship and family counseling</li>
+                            <li>Mental health workshops and seminars</li>
+                            <li>Referrals to specialized mental health professionals</li>
+                        </ul>
+
+                        <h3>Office Hours</h3>
+                        <p><strong>Monday - Friday</strong><br>8:00 AM - 5:00 PM</p>
+                        <p class="muted">Walk-ins welcome, but appointments are recommended for shorter wait times.</p>
+
+                        <h3>Contact Information</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 16v3a2 2 0 0 1-2 2 19 19 0 0 1-8-3 19 19 0 0 1-6-6 19 19 0 0 1-3-8 2 2 0 0 1 2-2h3"/>
+                                    <path d="M22 2l-5 5"/>
+                                </svg>
+                                <div>
+                                    <div><strong>Phone</strong></div>
+                                    <div>09XX XXX XXXX</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M4 4h16v12H4z"/>
+                                    <path d="M22 6l-10 7L2 6"/>
+                                </svg>
+                                <div>
+                                    <div><strong>Email</strong></div>
+                                    <div>guidance.unit@qcu.edu.ph</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="2"/>
+                                </svg>
+                                <div>
+                                    <div><strong>Location</strong></div>
+                                    <div>IL Building</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Confidentiality</h3>
+                        <p>All counseling sessions are completely confidential. Information shared with counselors will not be disclosed to anyone without your written consent, except in cases where there is imminent danger to yourself or others.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Request Form Modal -->
+            <div id="requestFormModal" class="modal" aria-hidden="true">
+                <div class="modal-overlay" onclick="closeRequestFormModal()"></div>
+                <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="requestFormTitle">
+                    <button class="modal-close" aria-label="Close" onclick="closeRequestFormModal()">×</button>
+                    <div class="modal-body">
+                        <h2 id="requestFormTitle">Request Form</h2>
+                        <p class="muted">Fill out this form to request a counseling session. All information is kept confidential.</p>
+
+                        <form id="requestForm" novalidate>
+                            <fieldset style="border:0;padding:0;margin:0;margin-top:12px;">
+                                <legend style="font-weight:600;color:#2c3e7f;margin-bottom:8px;">Personal Information</legend>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                                    <div>
+                                        <label for="studentId">Student ID <span style="color:#d00">*</span></label>
+                                        <input id="studentId" name="studentId" type="text" placeholder="e.g., 23-0000" required inputmode="numeric" style="width:100%;padding:10px;border:1px solid #e8e8e8;border-radius:6px;margin-top:6px;">
+                                    </div>
+                                    <div>
+                                        <label for="fullName">Full Name <span style="color:#d00">*</span></label>
+                                        <input id="fullName" name="fullName" type="text" placeholder="Full Name" required style="width:100%;padding:10px;border:1px solid #e8e8e8;border-radius:6px;margin-top:6px;">
+                                    </div>
+                                    <div>
+                                        <label for="phone">Phone Number <span style="color:#d00">*</span></label>
+                                        <input id="phone" name="phone" type="tel" placeholder="09XX XXX XXXX" required inputmode="tel" style="width:100%;padding:10px;border:1px solid #e8e8e8;border-radius:6px;margin-top:6px;">
+                                    </div>
+                                    <div>
+                                        <label for="email">Email Address <span style="color:#d00">*</span></label>
+                                        <input id="email" name="email" type="email" placeholder="your.email@gmail.com" required style="width:100%;padding:10px;border:1px solid #e8e8e8;border-radius:6px;margin-top:6px;">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset style="border:0;padding:0;margin:20px 0 0 0;">
+                                <legend style="font-weight:600;color:#2c3e7f;margin-bottom:8px;">Reference Contact</legend>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                                    <div>
+                                        <label for="refName">Full Name <span style="color:#d00">*</span></label>
+                                        <input id="refName" name="refName" type="text" placeholder="Full Name" required style="width:100%;padding:10px;border:1px solid #e8e8e8;border-radius:6px;margin-top:6px;">
+                                    </div>
+                                    <div>
+                                        <label for="relationship">Relationship <span style="color:#d00">*</span></label>
+                                        <input id="relationship" name="relationship" type="text" placeholder="Guardian" required style="width:100%;padding:10px;border:1px solid #e8e8e8;border-radius:6px;margin-top:6px;">
+                                    </div>
+                                    <div>
+                                        <label for="refPhone">Phone Number <span style="color:#d00">*</span></label>
+                                        <input id="refPhone" name="refPhone" type="tel" placeholder="09XX XXX XXXX" required inputmode="tel" style="width:100%;padding:10px;border:1px solid #e8e8e8;border-radius:6px;margin-top:6px;">
+                                    </div>
+                                    <div>
+                                        <label for="refEmail">Email Address <span style="color:#d00">*</span></label>
+                                        <input id="refEmail" name="refEmail" type="email" placeholder="your.email@gmail.com" required style="width:100%;padding:10px;border:1px solid #e8e8e8;border-radius:6px;margin-top:6px;">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div style="margin-top:12px;display:flex;align-items:center;gap:10px;">
+                                <input id="consent" name="consent" type="checkbox" required>
+                                <label for="consent" style="font-size:13px;color:#666;">I understand that my information will be handled confidentially by licensed QCU counselors. <a href="#" style="color:#2c3e7f;text-decoration:underline;">View Privacy Policy</a></label>
+                            </div>
+
+                            <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:18px;">
+                                <button type="button" class="learn-more-btn" style="background:#fff;color:#333;border:1px solid #e8e8e8;padding:10px 18px;border-radius:6px;" onclick="closeRequestFormModal()">Cancel</button>
+                                <button type="submit" class="learn-more-btn" style="background:#2c3e7f;color:#fff;padding:10px 18px;border-radius:6px;border:0;">Submit Request</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="content-grid">
+                <!-- Announcements Section -->
+                <section class="announcements-section">
+                    <div class="section-header">
+                        <h2>Announcements</h2>
+                    </div>
+                    
+                    <div class="announcements-filter">
+                        <button class="filter-btn active" id="filterUnread" onclick="filterAnnouncements('unread')">Unread <span class="badge" id="unreadCount">2</span></button>
+                        <button class="filter-btn" id="filterAll" onclick="filterAnnouncements('all')">All</button>
+                        <a href="#" class="mark-read-link" onclick="markAllAsRead(event)">Mark All As Read</a>
+                    </div>
+
+                    <div class="announcements-list" id="announcementsList">
+                        <!-- Announcement Item 1 -->
+                        <div class="announcement-item" data-announcement-id="1" data-read="false">
+                            <h3 class="announcement-title">Mental Health Awareness Week</h3>
+                            <div class="announcement-meta">
+                                <span class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1">
+                                        <rect x="2" y="2" width="12" height="12" rx="1"/>
+                                        <path d="M2 6h12"/>
+                                    </svg>
+                                    October 15-19, 2025
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="8" cy="8" r="7"/>
+                                        <path d="M8 4v4l3 2"/>
+                                    </svg>
+                                    9:00 AM - 4:00 PM daily
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1">
+                                        <path d="M8 1c3.87 0 7 3.13 7 7s-3.13 7-7 7-7-3.13-7-7 3.13-7 7-7z"/>
+                                        <path d="M8 4v4l3 2"/>
+                                    </svg>
+                                    Main Auditorium
+                                </span>
+                            </div>
+                            <p class="announcement-description">Join us for workshops, seminars, and activities focused on mental health awareness and wellness.</p>
+                        </div>
+
+                        <!-- Announcement Item 2 -->
+                        <div class="announcement-item" data-announcement-id="2" data-read="false">
+                            <h3 class="announcement-title">Group Therapy Sessions</h3>
+                            <div class="announcement-meta">
+                                <span class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1">
+                                        <rect x="2" y="2" width="12" height="12" rx="1"/>
+                                        <path d="M2 6h12"/>
+                                    </svg>
+                                    October 20, 2025
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="8" cy="8" r="7"/>
+                                        <path d="M8 4v4l3 2"/>
+                                    </svg>
+                                    Mondays & Wednesdays, 2:00 PM
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1">
+                                        <path d="M8 1c3.87 0 7 3.13 7 7s-3.13 7-7 7-7-3.13-7-7 3.13-7 7-7z"/>
+                                        <path d="M8 4v4l3 2"/>
+                                    </svg>
+                                    IL Building
+                                </span>
+                            </div>
+                            <p class="announcement-description">New group therapy sessions for students dealing with academic stress and anxiety.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Right Sidebar - Quick Actions -->
+                <aside class="quick-actions-sidebar">
+                    <!-- Request Form Card -->
+                    <div class="action-card" role="button" tabindex="0" aria-controls="requestFormModal" onclick="openRequestFormModal()">
+                        <div class="card-icon">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="#2c3e7f" stroke-width="1.5">
+                                <rect x="8" y="8" width="34" height="34" rx="2"/>
+                                <path d="M15 18h20"/>
+                                <path d="M15 28h20"/>
+                                <path d="M15 38h10"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Request Form</h3>
+                    </div>
+
+                    <!-- My Sessions Card -->
+                    <div class="action-card" role="button" tabindex="0" onclick="openSessionsModal()">
+                        <div class="card-icon">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="#2c3e7f" stroke-width="1.5">
+                                <rect x="10" y="8" width="30" height="34" rx="2"/>
+                                <circle cx="25" cy="15" r="4"/>
+                                <path d="M20 24h10"/>
+                                <path d="M20 32h10"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">My Sessions</h3>
+                    </div>
+
+                    <!-- FAQs Card -->
+                    <div class="action-card faq-card" role="button" tabindex="0" onclick="openFAQsModal()">
+                        <div class="card-icon">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="white">
+                                <circle cx="25" cy="25" r="25"/>
+                                <text x="25" y="32" font-size="28" font-weight="bold" text-anchor="middle" fill="#2c3e7f">?</text>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">FAQs</h3>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <!-- Sessions Modal -->
+    <div id="sessionsModal" class="modal" aria-hidden="true">
+        <div class="modal-overlay" onclick="closeSessionsModal()"></div>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="sessionsTitle">
+            <button class="modal-close" aria-label="Close" onclick="closeSessionsModal()">×</button>
+            <div class="modal-body">
+                <h2 id="sessionsTitle">My Sessions</h2>
+                <p class="muted">Monitor and manage ongoing counseling cases and scheduled follow-up sessions.</p>
+
+                <div style="display:flex;gap:8px;margin-top:12px;border-radius:8px;overflow:hidden;background:#f2f4f7;padding:6px;">
+                    <button id="tabPending" class="tab-btn active" type="button" onclick="switchSessionTab('pending')" style="background:none;border:0;padding:8px 12px;">Pending <span id="countPending" style="background:#fff;border-radius:6px;padding:2px 8px;margin-left:8px;font-size:12px;color:#2c3e7f;"></span></button>
+                    <button id="tabScheduled" class="tab-btn" type="button" onclick="switchSessionTab('scheduled')" style="background:none;border:0;padding:8px 12px;">Scheduled <span id="countScheduled" style="background:#fff;border-radius:6px;padding:2px 8px;margin-left:8px;font-size:12px;color:#2c3e7f;"></span></button>
+                    <button id="tabCompleted" class="tab-btn" type="button" onclick="switchSessionTab('completed')" style="background:none;border:0;padding:8px 12px;">Completed <span id="countCompleted" style="background:#fff;border-radius:6px;padding:2px 8px;margin-left:8px;font-size:12px;color:#2c3e7f;"></span></button>
+                </div>
+
+                <div style="margin-top:16px;">
+                    <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
+                        <input type="search" id="sessionsSearch" placeholder="Search for a request.." style="flex:1;padding:8px;border:1px solid #e8e8e8;border-radius:6px;">
+                        <button id="sessionsFilter" style="background:#fff;border:1px solid #e8e8e8;padding:8px 10px;border-radius:6px;">Filter</button>
+                    </div>
+
+                    <!-- List container -->
+                    <div id="sessionsListContainer">
+                        <div id="sessionsList" style="display:flex;flex-direction:column;gap:12px;max-height:60vh;overflow:auto;">
+                            <!-- Session items will be rendered here -->
+                        </div>
+                    </div>
+
+                    <!-- Details container (hidden by default) -->
+                    <div id="sessionDetailsContainer" style="display:none;max-height:70vh;overflow:auto;padding-top:6px;">
+                        <!-- Details will be rendered here by JS -->
+                        <div id="sessionDetails" style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:18px;">
+                        </div>
+                        <div style="display:flex;justify-content:flex-end;margin-top:12px;">
+                            <button type="button" onclick="backToSessionsList()" style="background:#fff;color:#333;border:1px solid #e8e8e8;padding:8px 12px;border-radius:6px;margin-right:8px;">Back</button>
+                            <button id="detailsCancelBtn" type="button" style="background:#2c3e7f;color:#fff;padding:8px 12px;border-radius:6px;border:0;">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQs Modal -->
+    <div id="faqsModal" class="modal" aria-hidden="true">
+        <div class="modal-overlay" onclick="closeFAQsModal()"></div>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="faqsTitle">
+            <button class="modal-close" aria-label="Close" onclick="closeFAQsModal()">×</button>
+            <div class="modal-body">
+                <h2 id="faqsTitle">FAQs</h2>
+                <p class="muted">Common questions about Counseling Unit services.</p>
+
+                <div id="faqsList" style="margin-top:12px;display:flex;flex-direction:column;gap:10px;">
+                    <!-- FAQ items will be injected here by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

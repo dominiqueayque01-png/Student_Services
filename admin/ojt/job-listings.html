@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Job Listings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="job-listings-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin OJT Listings - Job Listings</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#8fa3d4"/>
+                            <path d="M20 8C15.6 8 12 11.6 12 16C12 19.2 13.8 21.9 16.5 23.1V28H23.5V23.1C26.2 21.9 28 19.2 28 16C28 11.6 24.4 8 20 8Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h3>QCU Student Services</h3>
+                        <p>Admin Portal - OJT</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-item" data-page="overview">
+                        <span class="nav-icon">📊</span>
+                        <span>Overview</span>
+                    </div>
+                    <div class="nav-item active" data-page="job-listings">
+                        <span class="nav-icon">📋</span>
+                        <span>Job Listings</span>
+                    </div>
+                    <div class="nav-item" data-page="analytics">
+                        <span class="nav-icon">📈</span>
+                        <span>Analytics</span>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>admin@qcu.edu</p>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Panel -->
+            <main class="main-panel">
+                <!-- Page Header -->
+                <div class="page-header-section">
+                    <div>
+                        <h1>Job Listings</h1>
+                        <p>Manage all job listings.</p>
+                    </div>
+                </div>
+
+                <!-- Job Listings Management Section -->
+                <div class="job-listings-section">
+                    <div class="section-header">
+                        <h2>Job Listings Management</h2>
+                        <button class="btn-create-job" id="btn-create-job">
+                            👥 Create Club
+                        </button>
+                    </div>
+
+                    <!-- Job Listings Container -->
+                    <div class="job-listings-container" id="job-listings-container">
+                        <!-- Job cards will be populated here -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Create/Edit Job Modal -->
+    <div class="modal-overlay" id="job-modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="job-modal-title">Create Job Listing</h2>
+                <button class="modal-close" id="job-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle" id="job-modal-subtitle">Create job details and requirements.</p>
+                
+                <form id="job-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job-title">Job Title <span class="required">*</span></label>
+                            <input type="text" id="job-title" placeholder="e.g., Social Media Assistant" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-company">Company Name <span class="required">*</span></label>
+                            <input type="text" id="job-company" placeholder="e.g., ABC Company" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job-overview">Job Overview <span class="required">*</span></label>
+                        <textarea id="job-overview" placeholder="Describe the job..." rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job-rate">Hourly Rate (₱) <span class="required">*</span></label>
+                            <input type="number" id="job-rate" placeholder="e.g., 50" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-location">Location <span class="required">*</span></label>
+                            <input type="text" id="job-location" placeholder="e.g., Remote/Hybrid" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job-duration">Program Duration <span class="required">*</span></label>
+                            <input type="text" id="job-duration" placeholder="e.g., 8 weeks" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-hours">Hours per week <span class="required">*</span></label>
+                            <input type="number" id="job-hours" placeholder="e.g., 10" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job-category">Category <span class="required">*</span></label>
+                            <select id="job-category" required>
+                                <option value="">Select category</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Data Analytics">Data Analytics</option>
+                                <option value="Business">Business</option>
+                                <option value="Design">Design</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-worktype">Work Type <span class="required">*</span></label>
+                            <select id="job-worktype" required>
+                                <option value="">Select work type</option>
+                                <option value="On Site">On Site</option>
+                                <option value="Remote">Remote</option>
+                                <option value="Hybrid">Hybrid</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job-program">Training Program <span class="required">*</span></label>
+                            <input type="text" id="job-program" placeholder="e.g., Summer OJT 2025" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job-website">Company Website <span class="required">*</span></label>
+                            <input type="url" id="job-website" placeholder="e.g., https://example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-email">Company Email <span class="required">*</span></label>
+                            <input type="email" id="job-email" placeholder="e.g., hr@example.com" required>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="validation-message" id="validation-message" style="display: none;">
+                    <p style="color: #f44336; font-size: 12px; margin: 10px 0 0 0;">Please fill in the missing field(s).</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" id="job-modal-cancel">Cancel</button>
+                <button class="btn-submit" id="job-modal-submit">Create Job Listing</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="delete-modal-overlay">
+        <div class="modal-content delete-modal-content">
+            <div class="modal-header">
+                <h2>Delete Job Listing</h2>
+                <button class="modal-close" id="delete-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-weight: 600; color: #333; margin-bottom: 12px;">This action cannot be <span style="color: #f44336;">undone</span></p>
+                <p>You are about to permanently <span style="color: #f44336; font-weight: 600;">delete</span> this job listing. This will:</p>
+                <ul style="margin: 12px 0; padding-left: 20px; color: #555; font-size: 13px;">
+                    <li>Remove the listing from public view immediately</li>
+                    <li>Prevent new applications from being submitted</li>
+                    <li>Remove all associated data from the platform</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" id="delete-modal-cancel">Cancel</button>
+                <button class="btn-delete-confirm" id="delete-modal-confirm">Delete Job</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="job-listings-script.js"></script>
+</body>
+</html>

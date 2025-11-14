@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - OJT Listings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin OJT Listings - Dashboard</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#8fa3d4"/>
+                            <path d="M20 8C15.6 8 12 11.6 12 16C12 19.2 13.8 21.9 16.5 23.1V28H23.5V23.1C26.2 21.9 28 19.2 28 16C28 11.6 24.4 8 20 8Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h3>QCU Student Services</h3>
+                        <p>Admin Portal - OJT</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-item active" data-page="overview">
+                        <span class="nav-icon">📊</span>
+                        <span>Overview</span>
+                    </div>
+                    <div class="nav-item" data-page="job-listings">
+                        <span class="nav-icon">📋</span>
+                        <span>Job Listings</span>
+                    </div>
+                    <div class="nav-item" data-page="analytics">
+                        <span class="nav-icon">📈</span>
+                        <span>Analytics</span>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>admin@qcu.edu</p>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Panel -->
+            <main class="main-panel">
+                <!-- Page Title -->
+                <div class="page-header">
+                    <h1>OJT Listings Overview</h1>
+                    <p>Monitor all job listings, programs, and system-wide activities</p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Total Job Listings</h3>
+                            <span class="stat-icon">📋</span>
+                        </div>
+                        <div class="stat-value">6</div>
+                        <div class="stat-meta">5 active</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Active Training Programs</h3>
+                            <span class="stat-icon">🎓</span>
+                        </div>
+                        <div class="stat-value">2</div>
+                        <div class="stat-meta">Unique Programs Offered</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Avg. Hourly Rate</h3>
+                            <span class="stat-icon">💰</span>
+                        </div>
+                        <div class="stat-value">₱ 30</div>
+                        <div class="stat-meta">Across all projects</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Job Categories</h3>
+                            <span class="stat-icon">🏷️</span>
+                        </div>
+                        <div class="stat-value">5</div>
+                        <div class="stat-meta">Active Categories</div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item new">
+                            <div class="activity-badge">+</div>
+                            <div class="activity-content">
+                                <p class="activity-title">New job listing posted for <strong>Social Media Marketing Trainee</strong></p>
+                                <p class="activity-time">1 day ago</p>
+                            </div>
+                        </div>
+
+                        <div class="activity-item updated">
+                            <div class="activity-badge">✓</div>
+                            <div class="activity-content">
+                                <p class="activity-title">Updated job details for <strong>Data Analyst Trainee</strong></p>
+                                <p class="activity-time">2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

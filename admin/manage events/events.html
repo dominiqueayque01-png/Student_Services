@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Events</title>
+    <link rel="stylesheet" href="events-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin - Event Services - Manage Events</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#8fa3d4"/>
+                            <path d="M20 8C15.6 8 12 11.6 12 16C12 19.2 13.8 21.9 16.5 23.1V28H23.5V23.1C26.2 21.9 28 19.2 28 16C28 11.6 24.4 8 20 8Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h3>QCU Student Services</h3>
+                        <p>Admin Portal - Events</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-item active" data-page="events">
+                        <span class="nav-icon">📅</span>
+                        <span>Manage Events</span>
+                    </div>
+                    <div class="nav-item" data-page="registrations">
+                        <span class="nav-icon">📋</span>
+                        <span>Registrations</span>
+                    </div>
+                    <div class="nav-item" data-page="announcements">
+                        <span class="nav-icon">📢</span>
+                        <span>Announcements</span>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>admin@qcu.edu</p>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Panel -->
+            <main class="main-panel">
+                <!-- Top Section -->
+                <div class="events-header">
+                    <div class="search-and-button">
+                        <input type="text" class="search-box" id="event-search" placeholder="Search events by title, location, or organizer...">
+                        <button class="btn-create-event">+ Create Event</button>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="events-tabs">
+                    <div class="tab-group">
+                        <button class="tab-button active" data-tab="active">Active Events (<span id="active-count">0</span>)</button>
+                        <button class="tab-button" data-tab="archived">Archived Events (<span id="archived-count">0</span>)</button>
+                    </div>
+
+                    <!-- Filter -->
+                    <div class="tab-filter">
+                        <select id="event-filter" class="filter-select">
+                            <option value="">All Events</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Community">Community</option>
+                            <option value="Institutional">Institutional</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Events Grid -->
+                <div class="events-container">
+                    <div class="events-column active-column">
+                        <h3 class="column-title">Active Events</h3>
+                        <div class="events-grid" id="active-events">
+                            <!-- Active event cards will be populated here -->
+                        </div>
+                    </div>
+
+                    <div class="events-column archived-column">
+                        <h3 class="column-title">Archived Events</h3>
+                        <div class="events-grid" id="archived-events">
+                            <!-- Archived event cards will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Create/Edit Event Modal -->
+    <div class="modal" id="event-modal">
+        <div class="modal-content event-modal">
+            <div class="modal-header">
+                <h2 id="event-modal-title">Create New Event</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle" id="event-modal-subtitle">Fill in the details to create a new campus event.</p>
+
+                <div class="form-group">
+                    <label>Event Banner <span class="required">*</span></label>
+                    <div class="upload-area" id="upload-area">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <path d="M21 15l-5-5L5 21"></path>
+                        </svg>
+                        <p>Click to upload or drag and drop</p>
+                        <small>PNG, JPG up to 10MB</small>
+                        <input type="file" id="event-banner" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="event-title">Event Title <span class="required">*</span></label>
+                    <input type="text" id="event-title" placeholder="e.g., Tech Talk: IT Summit">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event-category">Category <span class="required">*</span></label>
+                        <select id="event-category">
+                            <option value="">e.g., Academic</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Community">Community</option>
+                            <option value="Institutional">Institutional</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-date">Date <span class="required">*</span></label>
+                        <input type="date" id="event-date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-time">Time <span class="required">*</span></label>
+                        <input type="time" id="event-time">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="event-location">Location <span class="required">*</span></label>
+                    <input type="text" id="event-location" placeholder="e.g., QCU Auditorium">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event-capacity">Capacity <span class="required">*</span></label>
+                        <input type="number" id="event-capacity" placeholder="e.g., 200">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-organizer">Organized by <span class="required">*</span></label>
+                        <input type="text" id="event-organizer" placeholder="e.g., QCU IT Department">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="event-about">About this Event <span class="required">*</span></label>
+                    <textarea id="event-about" placeholder="Describe your event..." rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="event-requirements">Requirements (Optional)</label>
+                    <input type="text" id="event-requirements" placeholder="e.g., Bring your laptop for hands-on workshops">
+                </div>
+
+                <div class="form-group">
+                    <label>Event Agenda <span class="required">*</span></label>
+                    <div class="agenda-list" id="agenda-list">
+                        <div class="agenda-item">
+                            <input type="time" class="agenda-time" placeholder="Time">
+                            <input type="text" class="agenda-title" placeholder="e.g., Registration">
+                            <button class="btn-remove-agenda" type="button">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add-agenda" type="button">+ Add Agenda Item</button>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Keywords <span class="required">*</span></label>
+                        <div class="keywords-list" id="keywords-list">
+                            <input type="text" class="keyword-input" placeholder="e.g., AI">
+                        </div>
+                        <button class="btn-add-keyword" type="button">+ Add Keyword</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>What to Expect <span class="required">*</span></label>
+                        <div class="expectation-list" id="expectation-list">
+                            <input type="text" class="expectation-input" placeholder="e.g., Guest Speakers">
+                        </div>
+                        <button class="btn-add-expectation" type="button">+ Add Expectation</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="event-status">Status <span class="required">*</span></label>
+                    <select id="event-status">
+                        <option value="Required">Required</option>
+                        <option value="Optional">Optional</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-submit" id="event-publish-btn">Publish Event</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-event-modal">
+        <div class="modal-content modal-confirm">
+            <div class="modal-header">
+                <h2>Delete Event?</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>This will permanently remove this event from the system. This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="events-script.js"></script>
+    <script>
+        // Handle sidebar navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const page = this.getAttribute('data-page');
+                if (page === 'registrations') {
+                    window.location.href = 'registrations.html';
+                } else if (page === 'announcements') {
+                    window.location.href = 'announcements.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

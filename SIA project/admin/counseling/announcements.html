@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Announcements</title>
+    <link rel="stylesheet" href="counseling-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin - Counseling - Announcements</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#8fa3d4"/>
+                            <path d="M20 8C15.6 8 12 11.6 12 16C12 19.2 13.8 21.9 16.5 23.1V28H23.5V23.1C26.2 21.9 28 19.2 28 16C28 11.6 24.4 8 20 8Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h3>QCU Student Services</h3>
+                        <p>Admin Portal - Counseling</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-item" data-page="counseling">
+                        <span class="nav-icon">📋</span>
+                        <span>All Sessions</span>
+                    </div>
+                    <div class="nav-item" data-page="counselors">
+                        <span class="nav-icon">👥</span>
+                        <span>Counselors</span>
+                    </div>
+                    <div class="nav-item active" data-page="announcements">
+                        <span class="nav-icon">📢</span>
+                        <span>Announcements</span>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>admin@qcu.edu</p>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Panel -->
+            <main class="main-panel announcements-panel">
+                <!-- Top Section with Button and Search -->
+                <div class="announcements-header">
+                    <button class="btn-new-announcement">+ New Announcement</button>
+                    <input type="text" class="search-box" id="announcement-search" placeholder="Search for an announcement...">
+                </div>
+
+                <!-- Announcements List -->
+                <div class="announcements-list" id="announcements-list">
+                    <!-- Announcement items will be populated here -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Add/Edit Announcement Modal -->
+    <div class="modal" id="announcement-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="announcement-modal-title">Add Announcement</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle" id="announcement-modal-subtitle">Post a new announcement for students to see</p>
+                
+                <div class="form-group">
+                    <label for="announcement-title">Title <span class="required">*</span></label>
+                    <input type="text" id="announcement-title" placeholder="Your title">
+                </div>
+
+                <div class="form-group">
+                    <label for="announcement-content">Content <span class="required">*</span></label>
+                    <textarea id="announcement-content" placeholder="Write your announcement message" rows="6"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-submit" id="announcement-submit-btn">Publish Announcement</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-announcement-modal">
+        <div class="modal-content modal-confirm">
+            <div class="modal-header">
+                <h2>Delete Announcement?</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>This will permanently remove this announcement from the system. This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

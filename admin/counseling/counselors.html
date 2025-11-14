@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Counselors</title>
+    <link rel="stylesheet" href="counseling-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin - Counseling - Counselors</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#8fa3d4"/>
+                            <path d="M20 8C15.6 8 12 11.6 12 16C12 19.2 13.8 21.9 16.5 23.1V28H23.5V23.1C26.2 21.9 28 19.2 28 16C28 11.6 24.4 8 20 8Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h3>QCU Student Services</h3>
+                        <p>Admin Portal - Counseling</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-item" data-page="counseling">
+                        <span class="nav-icon">📋</span>
+                        <span>All Sessions</span>
+                    </div>
+                    <div class="nav-item active" data-page="counselors">
+                        <span class="nav-icon">👥</span>
+                        <span>Counselors</span>
+                    </div>
+                    <div class="nav-item" data-page="announcements">
+                        <span class="nav-icon">📢</span>
+                        <span>Announcements</span>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>admin@qcu.edu</p>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Panel -->
+            <main class="main-panel counselors-panel">
+                <!-- Top Section with Button and Search -->
+                <div class="counselors-header">
+                    <button class="btn-add-counselor">+ Add Counselor</button>
+                    <input type="text" class="search-box" id="counselor-search" placeholder="Search for a counselor...">
+                </div>
+
+                <!-- Counselors Grid -->
+                <div class="counselors-grid" id="counselors-grid">
+                    <!-- Counselor cards will be populated here -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Add/Edit Counselor Modal -->
+    <div class="modal" id="counselor-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="counselor-modal-title">Add Counselor</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle" id="counselor-modal-subtitle">Add a new counselor to the counseling unit staff.</p>
+                
+                <div class="form-group">
+                    <label for="counselor-name">Name <span class="required">*</span></label>
+                    <input type="text" id="counselor-name" placeholder="Dr. Full Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="counselor-title">Title <span class="required">*</span></label>
+                    <input type="text" id="counselor-title" placeholder="Licensed Counselor">
+                </div>
+
+                <div class="form-group">
+                    <label for="counselor-email">Email <span class="required">*</span></label>
+                    <input type="email" id="counselor-email" placeholder="email@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="counselor-phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="counselor-phone" placeholder="09XX XXX XXXX">
+                </div>
+
+                <div class="form-group">
+                    <label for="counselor-availability-days">Availability <span class="required">*</span></label>
+                    <div class="availability-group">
+                        <select id="counselor-availability-days">
+                            <option value="">Days</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Mon-Fri">Mon-Fri</option>
+                        </select>
+                        <input type="time" id="counselor-availability-time" placeholder="9:00 AM - 5 PM">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-submit" id="counselor-submit-btn">Add Counselor</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content modal-confirm">
+            <div class="modal-header">
+                <h2>Delete Counselor?</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>This will permanently remove this counselor from the system. This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

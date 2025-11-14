@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="analytics-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Financial - Analytics</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#8fa3d4"/>
+                            <path d="M20 8C15.6 8 12 11.6 12 16C12 19.2 13.8 21.9 16.5 23.1V28H23.5V23.1C26.2 21.9 28 19.2 28 16C28 11.6 24.4 8 20 8Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h3>QCU Student Services</h3>
+                        <p>Admin Portal - OJT</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-item" data-page="overview">
+                        <span class="nav-icon">📊</span>
+                        <span>Overview</span>
+                    </div>
+                    <div class="nav-item" data-page="job-listings">
+                        <span class="nav-icon">📋</span>
+                        <span>Job Listings</span>
+                    </div>
+                    <div class="nav-item active" data-page="analytics">
+                        <span class="nav-icon">📈</span>
+                        <span>Analytics</span>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>admin@qcu.edu</p>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Panel -->
+            <main class="main-panel">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1>System Analytics</h1>
+                    <p>Organization-wide insights and trends</p>
+                </div>
+
+                <!-- Program Analytics Section -->
+                <h2 class="section-title">Program Analytics</h2>
+
+                <!-- Analytics Charts Grid -->
+                <div class="analytics-grid">
+                    <!-- Jobs by Category -->
+                    <div class="analytics-card">
+                        <h3 class="card-title">Jobs by Category</h3>
+                        <div class="chart-container">
+                            <div class="chart-item">
+                                <div class="chart-label">Technology</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar" style="width: 60%;">
+                                        <span class="chart-value">1</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-item">
+                                <div class="chart-label">Marketing</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar" style="width: 80%;">
+                                        <span class="chart-value">2</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-item">
+                                <div class="chart-label">Design</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar" style="width: 60%;">
+                                        <span class="chart-value">1</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-item">
+                                <div class="chart-label">Finance</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar" style="width: 60%;">
+                                        <span class="chart-value">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hourly Rate Distribution -->
+                    <div class="analytics-card">
+                        <h3 class="card-title">Hourly Rate Distribution</h3>
+                        <div class="chart-container">
+                            <div class="chart-item">
+                                <div class="chart-label">₱30-35</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar rate-1" style="width: 50%;">
+                                        <span class="chart-value">2</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-item">
+                                <div class="chart-label">₱40-45</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar rate-2" style="width: 70%;">
+                                        <span class="chart-value">3</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-item">
+                                <div class="chart-label">₱50-60</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar rate-3" style="width: 50%;">
+                                        <span class="chart-value">2</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-item">
+                                <div class="chart-label">₱65+</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar rate-4" style="width: 0%;">
+                                        <span class="chart-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work Location Types -->
+                    <div class="analytics-card full-width">
+                        <h3 class="card-title">Work Location Types</h3>
+                        <div class="chart-container">
+                            <div class="chart-item">
+                                <div class="chart-label">Remote</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar location-1" style="width: 50%;">
+                                        <span class="chart-value">2</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-item">
+                                <div class="chart-label">On-Site</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar location-2" style="width: 75%;">
+                                        <span class="chart-value">3</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-item">
+                                <div class="chart-label">Hybrid</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar location-3" style="width: 50%;">
+                                        <span class="chart-value">2</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-item">
+                                <div class="chart-label">Field-Based</div>
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar location-4" style="width: 0%;">
+                                        <span class="chart-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

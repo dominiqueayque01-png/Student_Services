@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Event Details</title>
+    <link rel="stylesheet" href="events-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin - Event Services - Event Details</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#8fa3d4"/>
+                            <path d="M20 8C15.6 8 12 11.6 12 16C12 19.2 13.8 21.9 16.5 23.1V28H23.5V23.1C26.2 21.9 28 19.2 28 16C28 11.6 24.4 8 20 8Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h3>QCU Student Services</h3>
+                        <p>Admin Portal - Events</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-item" data-page="events">
+                        <span class="nav-icon">📅</span>
+                        <span>Manage Events</span>
+                    </div>
+                    <div class="nav-item" data-page="registrations">
+                        <span class="nav-icon">📋</span>
+                        <span>Registrations</span>
+                    </div>
+                    <div class="nav-item" data-page="announcements">
+                        <span class="nav-icon">📢</span>
+                        <span>Announcements</span>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>admin@qcu.edu</p>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Panel - Event Details -->
+            <main class="main-panel event-details-view">
+                <div class="event-details-header">
+                    <div class="event-title-area">
+                        <span class="event-category-badge" id="detail-category">Academic</span>
+                        <h1 id="detail-title">Tech Talk: IT Summit</h1>
+                        <p class="event-details-subtitle">Event Details</p>
+                    </div>
+                    <div class="event-details-actions">
+                        <button class="btn-edit-event">Edit</button>
+                        <button class="btn-delete-event">Delete</button>
+                    </div>
+                </div>
+
+                <div class="event-details-container">
+                    <!-- Event Banner -->
+                    <div class="event-banner">
+                        <img id="detail-banner" src="https://via.placeholder.com/800x300" alt="Event Banner">
+                    </div>
+
+                    <!-- Event Information Grid -->
+                    <div class="event-info-grid">
+                        <div class="info-card">
+                            <span class="info-icon">📅</span>
+                            <div>
+                                <p class="info-label">Date</p>
+                                <p class="info-value" id="detail-date">Tuesday · September 16, 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <span class="info-icon">⏰</span>
+                            <div>
+                                <p class="info-label">Time</p>
+                                <p class="info-value" id="detail-time">2:00 PM - 5:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <p class="info-label">Location</p>
+                                <p class="info-value" id="detail-location">QCU Auditorium</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <span class="info-icon">👥</span>
+                            <div>
+                                <p class="info-label">Attendance</p>
+                                <p class="info-value" id="detail-attendance">156/200</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content Area -->
+                    <div class="event-main-content">
+                        <!-- About Event -->
+                        <div class="content-section">
+                            <h2>About this Event</h2>
+                            <p id="detail-about">Join us for an exciting tech summit featuring industry leaders and innovative discussions...</p>
+                        </div>
+
+                        <div class="content-sections-row">
+                            <!-- Capacity -->
+                            <div class="content-section flex-item">
+                                <h3>Capacity</h3>
+                                <p id="detail-capacity-info">156 is participating</p>
+                                <div class="capacity-bar-detail">
+                                    <div class="capacity-fill-detail" style="width: 78%;"></div>
+                                </div>
+                                <p class="capacity-text" id="detail-capacity-text">44 slots remaining</p>
+                            </div>
+
+                            <!-- What to Expect -->
+                            <div class="content-section flex-item">
+                                <h3>What to Expect?</h3>
+                                <ul id="detail-expectations" class="expectations-list">
+                                    <li>Expert speakers from the industry</li>
+                                    <li>Hands-on workshops and activities</li>
+                                    <li>Networking opportunities</li>
+                                    <li>Certificate of participation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Event Agenda (Scrollable) -->
+                        <div class="content-section">
+                            <h2>Event Agenda</h2>
+                            <div class="agenda-section" id="detail-agenda">
+                                <!-- Agenda items will be populated here -->
+                            </div>
+                        </div>
+
+                        <!-- Requirements -->
+                        <div class="content-section" id="requirements-section">
+                            <h3 class="requirements-title">Requirements</h3>
+                            <div class="requirements-box">
+                                <p id="detail-requirements">Bring your laptop for hands-on workshops</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-details-footer">
+                    <button class="btn-cancel-details">Cancel</button>
+                    <button class="btn-save-changes">Save Changes</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="events-script.js"></script>
+</body>
+</html>

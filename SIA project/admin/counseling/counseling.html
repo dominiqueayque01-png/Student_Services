@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Counseling - All Sessions</title>
+    <link rel="stylesheet" href="counseling-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin - Counseling - All Sessions_Pending</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#8fa3d4"/>
+                            <path d="M20 8C15.6 8 12 11.6 12 16C12 19.2 13.8 21.9 16.5 23.1V28H23.5V23.1C26.2 21.9 28 19.2 28 16C28 11.6 24.4 8 20 8Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h3>QCU Student Services</h3>
+                        <p>Admin Portal - Counseling</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-item active" data-page="counseling">
+                        <span class="nav-icon">📋</span>
+                        <span>All Sessions</span>
+                    </div>
+                    <div class="nav-item" data-page="counselors">
+                        <span class="nav-icon">👥</span>
+                        <span>Counselors</span>
+                    </div>
+                    <div class="nav-item" data-page="announcements">
+                        <span class="nav-icon">📢</span>
+                        <span>Announcements</span>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>admin@qcu.edu</p>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Panel -->
+            <main class="main-panel">
+                <!-- Tabs -->
+                <div class="tabs-section">
+                    <div class="tabs">
+                        <button class="tab-button" data-filter="all">All</button>
+                        <button class="tab-button active" data-filter="pending">Pending</button>
+                        <button class="tab-button" data-filter="scheduled">Scheduled</button>
+                        <button class="tab-button" data-filter="completed">Completed</button>
+                    </div>
+                    <input type="text" class="search-box" id="search-box" placeholder="Search for a session...">
+                </div>
+
+                <div class="content-wrapper">
+                    <!-- Sessions List -->
+                    <div class="sessions-list" id="sessions-list">
+                        <div class="session-card selected" data-status="pending" data-id="C2025-001">
+                            <div class="session-header">
+                                <h4>C2025-001</h4>
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                            <p class="session-name">Juan Batumbakal</p>
+                            <div class="session-info">
+                                <div class="info-item">
+                                    <span class="info-label">📅 Created:</span>
+                                    <span>11/10/2025</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">📅 Date: dd/mm/yyyy</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">👨 Counselor:</span>
+                                    <span>N/A</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">⏰ Time: -----</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-card" data-status="pending" data-id="C2025-002">
+                            <div class="session-header">
+                                <h4>C2025-002</h4>
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                            <p class="session-name">Aiden Richards</p>
+                            <div class="session-info">
+                                <div class="info-item">
+                                    <span class="info-label">📅 Created:</span>
+                                    <span>11/10/2025</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">📅 Date: dd/mm/yyyy</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">👨 Counselor:</span>
+                                    <span>N/A</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">⏰ Time: -----</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-card" data-status="pending" data-id="C2025-003">
+                            <div class="session-header">
+                                <h4>C2025-003</h4>
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                            <p class="session-name">Jammy Cruz</p>
+                            <div class="session-info">
+                                <div class="info-item">
+                                    <span class="info-label">📅 Created:</span>
+                                    <span>11/10/2025</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">📅 Date: dd/mm/yyyy</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">👨 Counselor:</span>
+                                    <span>N/A</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">⏰ Time: -----</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Details Panel -->
+                    <div class="details-panel" id="details-panel">
+                        <div class="empty-state" id="empty-state" style="display: none;">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <rect x="10" y="20" width="60" height="50" rx="4" stroke="#ccc" stroke-width="2" fill="none"/>
+                                <path d="M25 35L35 50L50 30L70 55" stroke="#ccc" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="35" cy="38" r="3" fill="#ccc"/>
+                            </svg>
+                            <p>Select a case to view details</p>
+                            <p class="empty-hint">Click on any case from the list to see full information</p>
+                        </div>
+
+                        <div class="session-details" id="session-details" style="display: none;">
+                            <div class="details-header">
+                                <div>
+                                    <h3 id="detail-session-id">C2025-001</h3>
+                                    <p class="detail-subtitle">Session Details</p>
+                                </div>
+                                <span class="status-badge pending" id="detail-status">Pending</span>
+                            </div>
+
+                            <!-- Student Information Section -->
+                            <div class="detail-section">
+                                <div class="section-header">
+                                    <span class="section-icon">👤</span>
+                                    <h4>Student Information</h4>
+                                </div>
+                                <div class="detail-grid">
+                                    <div class="detail-item">
+                                        <label>Student Name</label>
+                                        <p id="detail-student-name">Juan Batumbakal</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Student ID</label>
+                                        <p id="detail-student-id">23-0000</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Email Address</label>
+                                        <p id="detail-student-email">juanbatumbakal@gmail.com</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Phone Number</label>
+                                        <p id="detail-student-phone">0XXX XXX XXXX</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Counselling Details Section -->
+                            <div class="detail-section">
+                                <div class="section-header">
+                                    <span class="section-icon">💬</span>
+                                    <h4>Counselling Details</h4>
+                                </div>
+                                <div class="detail-grid">
+                                    <div class="detail-item">
+                                        <label>Assigned Counselor</label>
+                                        <p id="detail-counselor">N/A</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Total Sessions</label>
+                                        <p id="detail-total-sessions">0</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Status</label>
+                                        <p id="detail-detail-status">Pending</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Session Timeline Section -->
+                            <div class="detail-section">
+                                <div class="section-header">
+                                    <span class="section-icon">📅</span>
+                                    <h4>Session Timeline</h4>
+                                </div>
+                                <div class="timeline-grid">
+                                    <div class="timeline-item">
+                                        <label>Initial Session</label>
+                                        <p id="detail-initial-session">N/A</p>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <label>Last Session</label>
+                                        <p id="detail-last-session">N/A</p>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <label>Next Scheduled</label>
+                                        <p id="detail-next-scheduled">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mark as Completed Section -->
+                            <div class="completion-section" id="completion-section" style="display: none;">
+                                <div class="completion-checkbox">
+                                    <input type="checkbox" id="mark-completed" />
+                                    <label for="mark-completed">Mark as Completed</label>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="action-buttons">
+                                <button class="btn-close">Close</button>
+                                <button class="btn-schedule" id="btn-schedule-or-edit">Schedule Session</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Schedule Session Modal -->
+    <div class="modal" id="schedule-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Schedule Session</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle" id="modal-subtitle">Assign a date and time for this counselling session.</p>
+                
+                <div class="form-group">
+                    <label for="schedule-date">Date</label>
+                    <input type="date" id="schedule-date" placeholder="dd/mm/yyyy">
+                </div>
+
+                <div class="form-group">
+                    <label for="schedule-time">Time</label>
+                    <input type="time" id="schedule-time" placeholder="HH:MM">
+                </div>
+
+                <div class="form-group">
+                    <label for="schedule-counselor">Select a counselor to assign to this session.</label>
+                    <select id="schedule-counselor">
+                        <option value="">Choose a counselor</option>
+                        <option value="Dr. Maria Santos">Dr. Maria Santos</option>
+                        <option value="Dr. Juan Dela Cruz">Dr. Juan Dela Cruz</option>
+                        <option value="Ms. Patricia Martinez">Ms. Patricia Martinez</option>
+                        <option value="Dr. Anna Rodriguez">Dr. Anna Rodriguez</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-schedule-save" id="btn-modal-action">Schedule Session</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

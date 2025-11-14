@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Event Registrations</title>
+    <link rel="stylesheet" href="events-styles.css">
+    <style>
+        .registrations-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .registrations-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .registrations-header h2 {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .event-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 14px;
+            color: #666;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .stat-card .number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2d5aa8;
+            margin: 0;
+        }
+
+        .stat-card .subtitle {
+            font-size: 12px;
+            color: #999;
+            margin-top: 8px;
+        }
+
+        .registrations-search {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .registrations-search input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .registrations-search select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .registrations-table-container {
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+        }
+
+        .registrations-info {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .registrations-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .registrations-table thead {
+            background-color: #f5f5f5;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .registrations-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .registrations-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #555;
+        }
+
+        .registrations-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .event-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .event-badge.academic {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .event-badge.community {
+            background-color: #f0e6ff;
+            color: #5a3e7b;
+        }
+
+        .event-badge.institutional {
+            background-color: #e8e8e8;
+            color: #555;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-buttons button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-view {
+            background-color: #e3f2fd;
+            color: #2d5aa8;
+        }
+
+        .btn-view:hover {
+            background-color: #bbdefb;
+        }
+
+        .btn-cancel-reg {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .btn-cancel-reg:hover {
+            background-color: #ffcdd2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin - Event Services - Registrations</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#8fa3d4"/>
+                            <path d="M20 8C15.6 8 12 11.6 12 16C12 19.2 13.8 21.9 16.5 23.1V28H23.5V23.1C26.2 21.9 28 19.2 28 16C28 11.6 24.4 8 20 8Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h3>QCU Student Services</h3>
+                        <p>Admin Portal - Events</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-item" data-page="events">
+                        <span class="nav-icon">📅</span>
+                        <span>Manage Events</span>
+                    </div>
+                    <div class="nav-item active" data-page="registrations">
+                        <span class="nav-icon">📋</span>
+                        <span>Registrations</span>
+                    </div>
+                    <div class="nav-item" data-page="announcements">
+                        <span class="nav-icon">📢</span>
+                        <span>Announcements</span>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>admin@qcu.edu</p>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Panel -->
+            <main class="main-panel">
+                <div class="registrations-container">
+                    <!-- Stats Cards -->
+                    <div class="event-stats">
+                        <div class="stat-card">
+                            <h3>Tech Talk: IT Summit</h3>
+                            <p class="number">56</p>
+                            <p class="subtitle">/150 confirmed</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Schedule Adjustment</h3>
+                            <p class="number">178</p>
+                            <p class="subtitle">/300 confirmed</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>QCU Bayanihan Week</h3>
+                            <p class="number">45</p>
+                            <p class="subtitle">/100 confirmed</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Career Fair 2025</h3>
+                            <p class="number">231</p>
+                            <p class="subtitle">/350 confirmed</p>
+                        </div>
+                    </div>
+
+                    <!-- Search and Filter -->
+                    <div class="registrations-search">
+                        <input type="text" id="search-input" placeholder="Search by student name, ID, or event...">
+                        <select id="filter-event">
+                            <option value="">All Events</option>
+                            <option value="Tech Talk: IT Summit">Tech Talk: IT Summit</option>
+                            <option value="Schedule Adjustment">Schedule Adjustment</option>
+                            <option value="QCU Bayanihan Week">QCU Bayanihan Week</option>
+                            <option value="Career Fair 2025">Career Fair 2025</option>
+                        </select>
+                    </div>
+
+                    <!-- Registrations Table -->
+                    <div class="registrations-table-container">
+                        <div class="registrations-info" id="table-info">
+                            Showing all registrations
+                        </div>
+                        <table class="registrations-table">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Student ID</th>
+                                    <th>Event</th>
+                                    <th>Registration Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="registrations-tbody">
+                                <tr>
+                                    <td>Juan Dela Cruz</td>
+                                    <td>23-9995</td>
+                                    <td><span class="event-badge academic">Tech Talk: IT Summit</span></td>
+                                    <td>15/10/2025</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-view">View</button>
+                                            <button class="btn-cancel-reg">Cancel</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Maria Santos</td>
+                                    <td>23-9996</td>
+                                    <td><span class="event-badge community">QCU Bayanihan Week</span></td>
+                                    <td>15/10/2025</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-view">View</button>
+                                            <button class="btn-cancel-reg">Cancel</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Pedro Reyes</td>
+                                    <td>23-9997</td>
+                                    <td><span class="event-badge academic">Tech Talk: IT Summit</span></td>
+                                    <td>15/10/2025</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-view">View</button>
+                                            <button class="btn-cancel-reg">Cancel</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ana Garcia</td>
+                                    <td>23-9998</td>
+                                    <td><span class="event-badge institutional">Schedule Adjustment</span></td>
+                                    <td>15/10/2025</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-view">View</button>
+                                            <button class="btn-cancel-reg">Cancel</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Carlos Mendoza</td>
+                                    <td>23-9999</td>
+                                    <td><span class="event-badge academic">Tech Talk: IT Summit</span></td>
+                                    <td>15/10/2025</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-view">View</button>
+                                            <button class="btn-cancel-reg">Cancel</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Handle sidebar navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const page = this.getAttribute('data-page');
+                if (page === 'events') {
+                    window.location.href = 'events.html';
+                } else if (page === 'announcements') {
+                    window.location.href = 'announcements.html';
+                }
+                // registrations page stays on current page
+            });
+        });
+
+        // Search functionality
+        document.getElementById('search-input').addEventListener('keyup', function() {
+            const searchTerm = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#registrations-tbody tr');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const studentName = row.cells[0].textContent.toLowerCase();
+                const studentId = row.cells[1].textContent.toLowerCase();
+                const eventName = row.cells[2].textContent.toLowerCase();
+
+                if (studentName.includes(searchTerm) || studentId.includes(searchTerm) || eventName.includes(searchTerm)) {
+                    row.style.display = '';
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            updateTableInfo(visibleCount);
+        });
+
+        // Filter by event
+        document.getElementById('filter-event').addEventListener('change', function() {
+            const filterValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#registrations-tbody tr');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const eventName = row.cells[2].textContent.toLowerCase();
+
+                if (filterValue === '' || eventName.includes(filterValue)) {
+                    row.style.display = '';
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            updateTableInfo(visibleCount);
+        });
+
+        // Cancel registration handler
+        document.querySelectorAll('.btn-cancel-reg').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (confirm('Are you sure you want to cancel this registration?')) {
+                    this.closest('tr').remove();
+                    const remainingRows = document.querySelectorAll('#registrations-tbody tr').length;
+                    updateTableInfo(remainingRows);
+                }
+            });
+        });
+
+        function updateTableInfo(count) {
+            document.getElementById('table-info').textContent = `Showing ${count} registration${count !== 1 ? 's' : ''}`;
+        }
+    </script>
+</body>
+</html>
