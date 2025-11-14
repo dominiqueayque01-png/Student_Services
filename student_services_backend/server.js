@@ -36,13 +36,15 @@ mongoose.connect(mongoURI)
 
 // Make sure each route is required ONLY ONCE
 // --- 5. IMPORT & USE YOUR ROUTES ---
-const clubRoutes = require('./routes/club.routes');
-const eventRoutes = require('./routes/event.routes');
+const clubRoutes = require('./routes/club.routes.js');
+const eventRoutes = require('./routes/event.routes.js');
 const ojtRoutes = require('./routes/ojt.routes.js');
-const counselingRoutes = require('./routes/counseling.routes');
+const counselingRoutes = require('./routes/counseling.routes.js');
 const adminCounselingRoutes = require('./routes/adminCounseling.routes.js');
 const clubApplicationRoutes = require('./routes/clubApplication.routes.js'); 
 const eventRegistrationRoutes = require('./routes/eventRegistration.routes.js'); 
+
+
 
 // Tell Express to use each route ONLY ONCE
 app.use('/api/clubs', clubRoutes);

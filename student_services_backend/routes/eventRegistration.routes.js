@@ -1,7 +1,9 @@
+// --- File: routes/eventRegistration.routes.js ---
 const express = require('express');
 const router = express.Router();
 const EventRegistration = require('../models/eventRegistration.model');
 
+// POST a new registration
 router.post('/', async (req, res) => {
     const registration = new EventRegistration({
         eventId: req.body.eventId,
